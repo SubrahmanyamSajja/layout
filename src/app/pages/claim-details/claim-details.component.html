@@ -1,0 +1,220 @@
+<div class="p-16">
+  <div class="dflex">
+    <ng-container *ngTemplateOutlet="claimDetails"></ng-container>
+    <ng-container *ngTemplateOutlet="memberDetails"></ng-container>
+      <ng-container *ngTemplateOutlet="providerDetails"></ng-container>
+  </div>
+  <div>
+    <ng-container *ngTemplateOutlet="services"></ng-container>
+    <ng-container *ngTemplateOutlet="transactions"></ng-container>
+    <ng-container *ngTemplateOutlet="procedureCodes"></ng-container>
+  </div>
+  <ng-template #claimDetails>
+    <div class="card details-card details-header">
+      <div class="detail-title"><span class="details-icon fas fa-list-ul"></span>
+        <span>Claim Details</span>
+      </div>
+      <div class="key-value-container mt-15 dl-pad">
+        <span class="key">Claim#:</span>
+        <span class="value">{{claim?.payorSystemClaimNo}}</span>
+      </div>
+      <div class="key-value-container dl-pad">
+        <span class="key">POS:</span>
+        <span class="value">{{claim?.placeOfServiceName}}</span>
+      </div>
+      <div class="dflex">
+        <div class="key-value-container dl-pad">
+          <span class="key">DOS:</span>
+          <span class="value">{{claim?.earliestServiceDate}}</span>
+        </div>
+        <div class="key-value-container dl-pad">
+            <span class="key">DOR:</span>
+            <span class="value">{{claim?.receivedByPayorOn}}</span>
+          </div>
+      </div>
+      <div class="dflex">
+          <div class="key-value-container dl-pad">
+            <span class="key">DOC:</span>
+            <span class="value">{{claim?.createdDateTime}}</span>
+          </div>
+          <div class="key-value-container dl-pad">
+              <span class="key">Adjudicated On:</span>
+              <span class="value">{{claim?.adjudicatedOn}}</span>
+            </div>
+        </div>
+        <div class="dflex">
+            <div class="key-value-container dl-pad">
+              <span class="key">DOP:</span>
+              <span class="value">{{claim?.paidOn}}</span>
+            </div>
+            <div class="key-value-container dl-pad">
+                <span class="key">Check$:</span>
+                <span class="value">{{claim?.paymentCheckNo}}</span>
+              </div>
+          </div>
+          <div class="dflex">
+              <div class="key-value-container dl-pad">
+                <span class="key">Status:</span>
+                <span class="value">{{claim?.payorStatusName}}</span>
+              </div>
+              <div class="key-value-container dl-pad">
+                  <span class="key">Auth#:</span>
+                  <span class="value">{{claim?.authorizationNo}}</span>
+                </div>
+            </div>
+            <div class="key-value-container dl-pad"><span class="key">Original Claim No:</span>
+            <span class="value">{{claim?.originalClaimOfAdjustedClaimNo}}</span></div>
+    </div>
+  </ng-template>
+  <ng-template #memberDetails>
+      <div class="card details-card details-header">
+          <div class="detail-title"><span class="details-icon fas fa-user"></span>
+            <span>Member Details</span>
+          </div>
+          <div class="key-value-container mt-15 dl-pad">
+            <span class="key">{{claim?.memberid}} - </span>
+            <span class="value">{{claim?.memberName}}</span>
+          </div>
+
+          <div class="dflex">
+            <div class="key-value-container dl-pad">
+              <span class="key">DOB:</span>
+              <span class="value">{{claim?.memberDob}}</span>
+            </div>
+            <div class="key-value-container dl-pad">
+                <span class="key">Gender:</span>
+                <span class="value">{{claim?.gender}}</span>
+              </div>
+          </div>
+
+              <div class="key-value-container dl-pad">
+                <span class="key">AGE:</span>
+                <span class="value">62 Years</span>
+              </div>
+              <div class="key-value-container dl-pad">
+                  <span class="key">Health Plan:</span>
+                  <span class="value">{{claim?.healthPlanName}}</span>
+                </div>
+
+
+                <div class="key-value-container dl-pad">
+                  <span class="key">Benefit:</span>
+                  <span class="value">{{claim?.benefitPlanid}}</span>
+                </div>
+                <div class="key-value-container dl-pad">
+                    <span class="key">Benefit Descr:</span>
+                    <span class="value">{{claim?.benefitOptionDescription}}</span>
+                  </div>
+
+
+                  <div class="key-value-container dl-pad">
+                    <span class="key">Benefit From / Thru:</span>
+ <span class="value">{{((claim?.memberBenefitOptionActiveDate)? (claim?.memberBenefitOptionActiveDate ) : "NA")
+     + " - " + ((claim?.memberBenefitOptionExpiryDate) ? (claim?.memberBenefitOptionExpiryDate ) : "Active")}}</span>
+                  </div>
+                </div>
+
+
+
+  </ng-template>
+  <ng-template #providerDetails>
+      <div class="card details-card details-header">
+          <div class="detail-title"><span class="details-icon fas fa-list-ul"></span>
+            <span>Claim Details</span>
+          </div>
+          <div class="key-value-container mt-15 dl-pad">
+            <span class="key">Claim#:</span>
+            <span class="value">{{claim?.payorSystemClaimNo}}</span>
+          </div>
+          <div class="key-value-container dl-pad">
+            <span class="key">POS:</span>
+            <span class="value">{{claim?.placeOfServiceName}}</span>
+          </div>
+          <div class="dflex">
+            <div class="key-value-container dl-pad">
+              <span class="key">DOS:</span>
+              <span class="value">{{claim?.earliestServiceDate}}</span>
+            </div>
+            <div class="key-value-container dl-pad">
+                <span class="key">DOR:</span>
+                <span class="value">{{claim?.receivedByPayorOn}}</span>
+              </div>
+          </div>
+          <div class="dflex">
+              <div class="key-value-container dl-pad">
+                <span class="key">DOC:</span>
+                <span class="value">{{claim?.createdDateTime}}</span>
+              </div>
+              <div class="key-value-container dl-pad">
+                  <span class="key">Adjudicated On:</span>
+                  <span class="value">{{claim?.adjudicatedOn}}</span>
+                </div>
+            </div>
+            <div class="dflex">
+                <div class="key-value-container dl-pad">
+                  <span class="key">DOP:</span>
+                  <span class="value">{{claim?.paidOn}}</span>
+                </div>
+                <div class="key-value-container dl-pad">
+                    <span class="key">Check$:</span>
+                    <span class="value">{{claim?.paymentCheckNo}}</span>
+                  </div>
+              </div>
+              <div class="dflex">
+                  <div class="key-value-container dl-pad">
+                    <span class="key">Status:</span>
+                    <span class="value">{{claim?.payorStatusName}}</span>
+                  </div>
+                  <div class="key-value-container dl-pad">
+                      <span class="key">Auth#:</span>
+                      <span jclass="value">{{claim?.authorizationNo}}</span>
+                    </div>
+                </div>
+                <div class="key-value-container dl-pad"><span class="key">Original Claim No:</span>
+                <span class="value">{{claim?.originalClaimOfAdjustedClaimNo}}</span></div>
+        </div>
+  </ng-template>
+  <ng-template #providerDetails>
+      <div class="card details-card details-header">
+          <div class="detail-title"><span class="details-icon fas fa-user-md"></span>
+            <span>Provider Details</span>
+          </div>
+          <div class="key-value-container mt-15 dl-pad">
+            <span class="key">{{claim?.renderingProviderid}} - </span>
+            <span class="value">{{claim?.renderingProviderName}}</span>
+          </div>
+          <div class="dflex">
+          <div class="key-value-container dl-pad">
+            <span class="key">Speciality:</span>
+            <span class="value">{{claim?.renderingProviderSpecialtyName}}</span>
+          </div>
+          <div class="key-value-container dl-pad">
+              <span class="key">Is Contracted:</span>
+              <span class="value chip" [ngClass]="{'success':!claim?.isProviderContracted,'bgc-red':claim?.isProviderContracted}">{{claim?.isProviderContracted ? 'NO' : 'YES'}}</span>
+            </div>
+        </div>
+
+            <div class="key-value-container dl-pad">
+              <span class="key">Active From/Thru:</span>
+              <span class="value">{{claim?.renderingProviderValidity ? claim?.renderingProviderValidity :'NA'}}</span>
+            </div>
+            <div class="key-value-container dl-pad">
+                <span class="key">Organization:</span>
+                <span class="value">{{claim?.organization}}</span>
+              </div>
+
+
+              <div class="key-value-container dl-pad">
+                <span class="key">Rendering Provider Npi:</span>
+                <span class="value">{{claim?.providerNpi}}</span>
+              </div>
+
+
+
+
+                <div class="key-value-container dl-pad"><span class="key">Original Claim No:</span>
+                <span class="value">{{claim?.originalClaimOfAdjustedClaimNo}}</span></div>
+        </div>
+
+  </ng-template>
+</div>

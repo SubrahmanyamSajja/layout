@@ -1,0 +1,17 @@
+<ul class="paginator">
+  <li>Items Per Page </li>
+  <li>
+    <select [(ngModel)]="pageSize" (ngModelChange)="_page()" >
+      <option *ngFor="let val of pageSizeOptions" [value]="val">{{val}}</option>
+    </select>
+  </li>
+  <li>
+    {{pageIndex*pageSize+1}}-{{(pageIndex+1)*pageSize}} of {{length}}
+  </li>
+  <li>
+    <a>Prev</a>
+  </li>
+  <li>
+    <a>Next</a>
+  </li>
+</ul>

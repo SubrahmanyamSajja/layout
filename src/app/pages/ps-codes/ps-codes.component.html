@@ -1,0 +1,15 @@
+<div class="resp-table">
+  <div class="mytr">
+    <div class="mytd " *ngFor="let psColumn of psColumns">
+      <div class="claimColumns">{{psColumn}}</div>
+    </div>
+  </div>
+  <div class="mytr" *ngFor="let ps of psData">
+
+
+      <div class="mytd">{{ps.code}}</div>
+      <div class="mytd">{{ps.description}}</div>
+
+
+  </div>
+</div>

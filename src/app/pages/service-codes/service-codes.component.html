@@ -1,0 +1,15 @@
+<div class="resp-table">
+  <div class="mytr">
+    <div class="mytd " *ngFor="let serviceColumn of serviceColumns">
+      <div class="serviceColumns">{{serviceColumn}}</div>
+    </div>
+  </div>
+  <div class="mytr" *ngFor="let service of servicesData">
+
+
+      <div class="mytd">{{service.code}}</div>
+      <div class="mytd">{{service.description}}</div>
+
+
+  </div>
+</div>

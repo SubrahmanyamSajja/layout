@@ -1,0 +1,526 @@
+/* You can add global styles to this file, and also import other style files */
+body, html {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    font-family: Roboto;
+    font-size: 13px;
+}
+.title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+$primaryColor:#3790ef;
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.flex {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.flex > * {
+    flex:  1;
+}
+.dflex{
+    display: flex;
+
+
+}
+.dflex > * {
+    flex:1;
+}
+.aco-top-bar {
+    height: 60px;
+    background: white;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 0 5px 1px grey;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.mr-5 {
+    margin-right: 5px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+.mr-15 {
+    margin-right: 15px;
+}
+.mr-20 {
+    margin-right: 20px;
+}
+.ml-5 {
+    margin-left: 5px;
+}
+.ml-10 {
+    margin-left: 10px;
+}
+.ml-15 {
+    margin-left: 15px;
+}
+.ml-20 {
+    margin-left: 20px;
+}
+.mb-5 {
+    margin-bottom: 5px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mt-5 {
+    margin-top: 5px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-15 {
+    margin-top: 15px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.m-5 {
+    margin: 5px;
+}
+.m-10 {
+    margin: 10px;
+}
+.m-15 {
+    margin: 15px;
+}
+.m-20 {
+    margin: 20px;
+}
+.pr-5 {
+    padding-right: 5px;
+}
+.pr-10 {
+    padding-right: 10px;
+}
+.pr-15 {
+    padding-right: 15px;
+}
+.pr-20 {
+    padding-right: 20px;
+}
+.pl-5 {
+    padding-left: 5px;
+}
+.pl-10 {
+    padding-left: 10px;
+}
+.pl-15 {
+    padding-left: 15px;
+}
+.pl-20 {
+    padding-left: 20px;
+}
+.pb-5 {
+    padding-bottom: 5px;
+}
+.pb-10 {
+    padding-bottom: 10px;
+}
+.pb-15 {
+    padding-bottom: 15px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pt-5 {
+    padding-top: 5px;
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.pt-15 {
+    padding-top: 15px;
+}
+.pt-20 {
+    padding-top: 20px;
+}
+.pt-25{
+    padding-top: 25px;
+}
+.p-5 {
+    padding: 5px;
+}
+.p-10 {
+    padding: 10px;
+}
+.p-15 {
+    padding: 15px;
+}
+.p-20 {
+    padding: 20px;
+}
+.mt-15{
+    margin-top:13px !important;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.aco-body {
+    height: calc(100vh - 20px);
+    position: relative;
+    padding-top: 60px;
+}
+
+.aco-left-panel {
+    height: 100%;
+    width: 180px;
+    background: black;
+    max-width: 180px;
+    color: white;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
+}
+.minimize-nav .aco-left-panel {
+    width: 37px;
+    max-width: 37px;
+}
+.aco-right-panel {
+    height: 100%;
+    padding: 5px;
+    width: 230px;
+    background: black;
+    max-width: 230px;
+    color: white;
+    display: none;
+}
+
+.aco-bottom-bar {
+    padding: 1px 5px;
+}
+
+
+.btn {
+    background: lightgray;
+    color: black;
+    padding:5px 10px;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: $primaryColor;
+    color: white;
+}
+.btn-xl {
+    padding: 7px 15px;
+}
+.btn-xxl {
+    padding: 7px 25px;
+}
+
+.aco-main-content {
+    background: white;
+    height: 100%;
+    overflow: auto;
+    padding: 10px;
+}
+.aco-left-panel li.active {
+    background: $primaryColor;
+}
+.auth-layout {
+    background: url('./assets/images/bg1.jpg')  0 0/cover no-repeat;
+    height: 100%;
+}
+
+.login {
+    background: white;
+    width: 384px;
+    max-width: 384px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+}
+
+.content-center {
+    justify-content: center;
+}
+
+.login .logo {
+    // min-height: 75px;
+    // background: grey;
+    // height: 75px;
+    border: 1px solid #ccc;
+
+}
+.form-control {
+    width: 100%;
+    background: white;
+    padding:8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.form-control:focus {
+    border:1px solid $primaryColor;
+}
+
+.main {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Creating a custom checkbox
+based on demand */
+.tickmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border:1px solid #ccc;
+}
+
+/* Specify the background color to be
+shown when hovering over checkbox */
+.main:hover input ~ .tickmark {
+    background-color:$primaryColor;
+}
+
+
+/* Specify the background color to be
+shown when checkbox is checked */
+.main input:checked ~ .tickmark {
+    background-color: $primaryColor;
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.tickmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display checkmark when checked */
+.main input:checked ~ .tickmark:after {
+    display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and
+showing only two border to make it look
+like a tickmark */
+.main .tickmark:after {
+    left: 5px;
+    bottom: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+a {
+    text-decoration: none;
+    color: $primaryColor;
+    cursor: pointer;
+}
+
+.resp-table {
+    width: 100%;
+    display: block;
+    padding: 10px;
+}
+.mytr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.cdk_claims {
+    min-width: 160px;
+    width: 160px;
+}
+.mytd {
+    display: table-cell;
+    padding: 5px;
+    word-break: break-word;
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+.mytr:last-child{
+    border-bottom: 1px solid;
+
+}
+.mytd:last-child{
+    border-right: 1px solid;
+}
+.mytr:first-child{
+ background-color: #ccc;;
+}
+
+.collapsable {
+    position: absolute;
+    top: 67px;
+    left: 8px;
+    padding: 3px 6px;
+    background: white;
+}
+
+
+.aco-left-panel li a {
+    padding-left: 12px;
+    color: white;
+}
+.aco-left-panel li i {
+    font-size: 17px;
+}
+
+.aco-left-panel li {
+    padding: 5px 10px 5px 10px;
+    white-space: nowrap;
+}
+.tob-bar-list li{
+    display: inline;
+    padding:5px;
+    font-size: 17px;
+
+}
+.companies-dropdown{
+    min-width:100px;
+    height: 25px;
+}
+.card{
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    // padding: 16px;
+    border-radius: 4px;
+    background: #fff;
+    color: rgba(0,0,0,.87);
+
+}
+.card-title{
+    font-size: 15px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px;
+}
+ .pos-rel{
+     position: relative;
+ }
+ .pos-abs{
+     position: absolute;
+ }
+ .details-card{
+   margin:3px;
+
+ }
+ .details-icon{
+     margin:0px 5px 0px 8px;
+ }
+ .detail-title {
+    background:$primaryColor;
+    color: #fff!important;
+    padding:5px;
+}
+.details-header{
+    border: 1px solid rgba(0,0,0,.14)!important;
+    margin-right: 5px!important;
+}
+.key-value-container{
+    margin-bottom: 8px;
+    font-size: 12px;
+    background-color: inherit;
+}
+.key-value-container .key{
+    color: grey;
+    // min-width: 80px;
+    display: inline-block;
+    margin-right:3px;
+}
+.key-value-container .value {
+    font-weight: 500;
+    word-break: keep-all;
+}
+.p-16{
+padding:16px;
+}
+.dl-pad{
+    padding: 0px 3px 5px 8px;
+}
+.pt-3{
+padding-top:3px;
+}
+.chip {
+    display: inline-block;
+    padding: 0 5px;
+    border-radius: 4px;
+    line-height: 17px;
+    white-space: normal;
+  }
+  .success{
+      background:green;
+      color:white;
+  }
+  .bgc-red{
+      background:red;
+      color:white;
+  }
+
+  ul.paginator {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+ul.paginator li {
+    display: inline-block;
+    padding: 5px;
+}

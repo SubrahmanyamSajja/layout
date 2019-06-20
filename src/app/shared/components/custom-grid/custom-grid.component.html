@@ -1,0 +1,36 @@
+<div class="sample" id="{{id}}">
+    <aco-loader *ngIf='loading'></aco-loader>
+    <div *ngIf="useAutoHeight" class='fixed-table auto-height'
+        [ngClass]="{'fixed-table-with-pagination':(!(loading$ | async) && _data?.length)}" [AutoHeight]="height">
+        <ng-container *ngTemplateOutlet="mainTable"></ng-container>
+    </div>
+    <div *ngIf="!useAutoHeight" class='fixed-table no-auto-height'
+        [ngClass]="{'fixed-table-with-pagination':(!(loading$ | async) && _data?.length)}">
+        <ng-container *ngTemplateOutlet="mainTable"></ng-container>
+    </div>
+    <div *ngIf='!loading && _data?.length'>
+        <aco-paginator #paginator class="" *ngIf="pagination" (page)="pageChnage($event)" [length]="length"
+            [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+        </aco-paginator>
+    </div>
+</div>
+<ng-template #mainTable>
+    <div class="resp-table" *ngIf='!(loading$ | async)'>
+        <div class="mytr">
+            <div class="mytd head_{{column.field}} col_{{column.field}}" *ngFor="let column of columns; let ci=index;">
+                {{column.display}}
+            </div>
+        </div>
+        <div class="mytr" *ngFor="let row of _data; let ri=index;">
+            <ng-container *ngFor="let column of columns; let ci=index;">
+                <div class="mytd  cell_{{column.field}} col_{{column.field}}">
+                    {{row[column.field]}}
+                </div>
+            </ng-container>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center center" *ngIf='!loading && !_data?.length'>
+            <span class='data-not-available'>{{nodatamsg}}</span>
+        </div>
+    </div>
+</ng-template>

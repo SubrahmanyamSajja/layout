@@ -1,0 +1,15 @@
+<div class="resp-table">
+  <div class="mytr">
+    <div class="mytd " *ngFor="let ndcColumn of ndcColumns">
+      <div class="serviceColumns">{{ndcColumn}}</div>
+    </div>
+  </div>
+  <div class="mytr" *ngFor="let ndc of ndcData">
+
+
+      <div class="mytd">{{ndc.code}}</div>
+      <div class="mytd">{{ndc.description}}</div>
+
+
+  </div>
+</div>

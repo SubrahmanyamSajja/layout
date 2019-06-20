@@ -1,0 +1,21 @@
+<div class="resp-table">
+  <div class="mytr">
+    <div class="mytd " *ngFor="let providerColumn of providerColumns">
+      <div class="claimColumns">{{providerColumn}}</div>
+    </div>
+  </div>
+  <div class="mytr" *ngFor="let provider of providersData">
+
+
+      <div class="mytd">{{provider.providerid}}</div>
+      <div class="mytd">{{provider.lastName}},{{provider.firstName}}</div>
+      <div class="mytd">{{provider.providerType}}</div>
+      <div class="mytd"> {{provider.primarySpeciality}}</div>
+      <div class="mytd">{{provider.organizationName}}</div>
+      <div class="mytd">{{provider. providerContractEffectiveDate}}</div>
+      <div class="mytd">{{(provider.providerContractExpiryDate)?provider.providerContractExpiryDate:'Active'}}</div>
+      <div class="mytd">{{provider.orgAddressLine1}},{{provider.orgAddressLine1}}</div>
+
+
+  </div>
+</div>

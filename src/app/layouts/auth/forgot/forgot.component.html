@@ -1,0 +1,21 @@
+<div class="flex content-center">
+    <div class="login">
+      <form #userForm="ngForm" (submit)="userForm.valid && reset()">
+        <div class="logo mb-15">&nbsp;</div>
+        <div class="mb-15 title"><span>Enter New Password</span></div>
+        <div class="mat-style">
+          <input type="password" class="form-control" id="newPassword" name="newPassword" placeHolder="New Password"     [(ngModel)]="forgotPassWord.newPassword" required/>
+        </div>
+        <div class="mat-style">
+          <input type="password" class="form-control" id="password" name="password" placeHolder="Confirm Password"  [(ngModel)]="forgotPassWord.confirmPassword" required/>
+        </div>
+
+        <div class="mb-15 mt-15"><button type="submit"
+            class="btn btn-primary btn-xxl">RESET</button></div>
+        <div class="text-center">
+          <div class="mb-5"><span>Don't have an account?</span></div>
+          <a>Create an account</a>
+        </div>
+      </form>
+    </div>
+  </div>
